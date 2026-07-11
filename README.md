@@ -41,3 +41,4 @@ python clean_data.py
 - 0 invalid dates
 - 0 remaining nulls
 - Full change log included for accountability
+- Done
