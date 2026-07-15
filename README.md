@@ -9,8 +9,9 @@ Industrial Training Kit.
 |---|---|---|---|
 | 1 | Data Cleaning & Preparation | Missing values, duplicates, format standardization | [`Project 1/`](./Project%201) |
 | 2 | Exploratory Data Analysis | Descriptive stats, outliers, correlation, trends | [`Project 2/`](./Project%202) |
+
 ## Tools used
 Python, pandas, matplotlib, openpyxl
 
 ## Author
-[Your Name] — Data Science student, FAST University
+Kalsoom Zaib — Data Science student, FAST University
