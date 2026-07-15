@@ -7,8 +7,8 @@ Industrial Training Kit.
 
 | # | Project | Focus | Link |
 |---|---|---|---|
-| 1 | Data Cleaning & Preparation | Missing values, duplicates, format standardization | [`project1-data-cleaning/`](./project1) |
-| 2 | Exploratory Data Analysis | Descriptive stats, outliers, correlation, trends | [`project2-eda/`](./project2) |
+| 1 | Data Cleaning & Preparation | Missing values, duplicates, format standardization | [`project1/`](./project1) |
+| 2 | Exploratory Data Analysis | Descriptive stats, outliers, correlation, trends | [`project2/`](./project2) |
 
 Each project folder has its own README with setup instructions, method,
 and results.
