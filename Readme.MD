@@ -17,4 +17,4 @@ and results.
 Python, pandas, matplotlib, openpyxl
 
 ## Author
-[Your Name] — Data Science student, FAST University
+Kalsoom— Data Science student, FAST University
