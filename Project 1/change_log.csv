@@ -1,0 +1,8 @@
+Change ID,Description,Impact,Status
+CR001,Filled 309 blank CouponCode values with 'No Coupon',Removed ambiguity between missing data and 'no coupon used',Resolved
+CR002,Checked for duplicate OrderIDs (0 found),Confirmed 0 duplicate orders inflating counts,Verified
+CR003,Checked for full duplicate rows (0 found),Confirmed no repeated records,Verified
+CR004,Standardized Date column to ISO 8601 (YYYY-MM-DD),Consistent date format across all 1200 rows,Resolved
+CR005,Trimmed whitespace on all text columns,Safety net; no visible change (data was already clean),Verified
+CR006,Rounded UnitPrice/TotalPrice to 2 decimal places,Consistent numeric precision,Resolved
+CR007,Validated TotalPrice = Quantity x UnitPrice for every row,0 mismatches found (data integrity confirmed),Verified
