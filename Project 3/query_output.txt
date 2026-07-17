@@ -1,0 +1,79 @@
+Loaded 1200 rows into the 'orders' table.
+
+--- Q1: High-value delivered orders ---
+SELECT OrderID, Product, TotalPrice
+    FROM orders
+    WHERE OrderStatus = 'Delivered' AND TotalPrice > 2000
+    ORDER BY TotalPrice DESC
+['OrderID', 'Product', 'TotalPrice']
+('ORD200789', 'Tablet', 3456.4)
+('ORD200632', 'Laptop', 3390.8)
+('ORD201065', 'Printer', 3334.0)
+('ORD200361', 'Printer', 3299.25)
+('ORD200837', 'Chair', 3277.75)
+('ORD201079', 'Phone', 3170.0)
+('ORD200511', 'Monitor', 2876.2)
+('ORD200578', 'Monitor', 2830.35)
+('ORD200883', 'Printer', 2807.4)
+('ORD200769', 'Printer', 2714.2)
+... (38 rows total)
+
+--- Q2: Order count per product ---
+SELECT Product, COUNT(*) AS order_count
+    FROM orders
+    GROUP BY Product
+    ORDER BY order_count DESC
+['Product', 'order_count']
+('Printer', 181)
+('Tablet', 179)
+('Chair', 178)
+('Laptop', 173)
+('Desk', 170)
+('Monitor', 163)
+('Phone', 156)
+
+--- Q3: Revenue and avg order value per product ---
+SELECT Product,
+           SUM(TotalPrice) AS total_revenue,
+           ROUND(AVG(TotalPrice), 2) AS avg_order_value
+    FROM orders
+    GROUP BY Product
+    ORDER BY total_revenue DESC
+['Product', 'total_revenue', 'avg_order_value']
+('Chair', 195620.11, 1098.99)
+('Printer', 195612.61000000002, 1080.73)
+('Laptop', 192126.56, 1110.56)
+('Tablet', 186568.95, 1042.28)
+('Monitor', 175651.41, 1077.62)
+('Desk', 167459.93, 985.06)
+('Phone', 151722.39, 972.58)
+
+--- Q4: Referral sources with more than 150 orders ---
+SELECT ReferralSource, COUNT(*) AS order_count
+    FROM orders
+    GROUP BY ReferralSource
+    HAVING COUNT(*) > 150
+    ORDER BY order_count DESC
+['ReferralSource', 'order_count']
+('Instagram', 259)
+('Email', 250)
+('Google', 241)
+('Facebook', 228)
+('Referral', 222)
+
+--- Q5: Avg order value by payment method (delivered only) ---
+SELECT PaymentMethod,
+           ROUND(AVG(TotalPrice), 2) AS avg_value,
+           COUNT(*) AS num_orders
+    FROM orders
+    WHERE OrderStatus = 'Delivered'
+    GROUP BY PaymentMethod
+    ORDER BY avg_value DESC
+['PaymentMethod', 'avg_value', 'num_orders']
+('Gift Card', 1099.54, 37)
+('Credit Card', 1071.05, 43)
+('Debit Card', 1067.1, 43)
+('Online', 1065.39, 63)
+('Cash', 952.39, 45)
+
+All queries executed successfully.
